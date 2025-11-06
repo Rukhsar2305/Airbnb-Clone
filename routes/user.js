@@ -14,8 +14,13 @@ router.post("/signup", wrapAsync (async(req, res) => {
     const newUser = new User({email, username});
     const registeredUser = await User.register(newUser, password);
     console.log(registeredUser);
-    req.flash("success", "Welcome to LuxeLay!");
-    res.redirect("/listings");
+    req.login(registeredUser, (err) =>{
+        if(err){
+            return next(err);
+        }
+        req.flash("success", "Welcome to LuxeLay!");
+        res.redirect("/listings");
+    });
     } catch(e){
         req.flash("error", e.message);
         res.redirect("/signup");
@@ -28,7 +33,7 @@ router.get("/login", (req, res) => {
 
 router.post("/login", passport.authenticate("local", {failureRedirect: '/login', failureFlash: true}), async(req, res) => {
     req.flash("success", "Welcome to LuxeLay! You are logged in!");
-    res.redirect("/listings");
+    res.redirect(req.session.redirectUrl);
 });
 
 router.get("/logout", (req, res, next) => {
