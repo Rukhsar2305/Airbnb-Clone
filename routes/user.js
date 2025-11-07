@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/user.js");
 const wrapAsync = require("../utils/wrapAsync.js");
 const passport = require("passport");
+const { savRedirectUrl } = require("../middleware.js");
 
 router.get("/signup", (req, res) => {
     res.render("users/signup.ejs");
@@ -31,9 +32,9 @@ router.get("/login", (req, res) => {
     res.render("users/login.ejs");
 });
 
-router.post("/login", passport.authenticate("local", {failureRedirect: '/login', failureFlash: true}), async(req, res) => {
+router.post("/login", savRedirectUrl, passport.authenticate("local", {failureRedirect: '/login', failureFlash: true}), async(req, res) => {
     req.flash("success", "Welcome to LuxeLay! You are logged in!");
-    res.redirect(req.session.redirectUrl);
+    res.redirect(res.locals.redirectUrl);
 });
 
 router.get("/logout", (req, res, next) => {
