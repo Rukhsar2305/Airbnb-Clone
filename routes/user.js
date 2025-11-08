@@ -33,8 +33,9 @@ router.get("/login", (req, res) => {
 });
 
 router.post("/login", savRedirectUrl, passport.authenticate("local", {failureRedirect: '/login', failureFlash: true}), async(req, res) => {
-    req.flash("success", "Welcome to LuxeLay! You are logged in!");
-    res.redirect(res.locals.redirectUrl);
+    req.flash("success", "Welcome back to LuxeLay!");
+    let redirectUrl = res.locals.redirectUrl || "/listings";
+    res.redirect(redirectUrl);
 });
 
 router.get("/logout", (req, res, next) => {
