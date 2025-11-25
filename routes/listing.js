@@ -39,18 +39,10 @@ router.get("/:id", wrapAsync (async (req, res) =>{
     res.render("listings/show.ejs", {listing});
 }));
 
-// //Create Route
-// router.post("/", validateListing, wrapAsync (async (req, res) => {
-//     const newListing = new Listing (req.body.listing);
-//     await newListing.save();
-//     req.flash("success", "New Listing Created!");
-//     res.redirect("/listings");
-// }));
-
 // Create Route
 router.post("/", isLoggedIn, validateListing, wrapAsync(async (req, res) => {
     const newListing = new Listing(req.body.listing);
-    newListing.owner = req.user._id;  // ✅ Assign owner
+    newListing.owner = req.user._id; 
     await newListing.save();
     req.flash("success", "New Listing Created!");
     res.redirect(`/listings/${newListing._id}`);
