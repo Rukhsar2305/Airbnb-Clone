@@ -13,23 +13,23 @@
             <% } else { %>
                 <img src="/path/to/default-image.jpg" class="card-img-top show-img" alt="default_image">
             <% } %>
-                    <div class="card-body">
-                        <p class="card-text">Owned by <i><%= listing.owner?.username || "Unknown" %></i></p>
-                        <p class="card-text"><%= listing.description || "No description available" %></p>
-                        <p class="card-text">&#8377 <%= listing.price !=null ? listing.price.toLocaleString("en-IN") : "N/A" %></p>
-                        <p class="card-text"><%= listing.location || "Location not specified" %></p>
-                        <p class="card-text"><%= listing.country || "Country not specified" %></p>
-                    </div>
+            <div class="card-body">
+                <p class="card-text">Owned by <i><%= listing.owner?.username || "Unknown" %></i></p>
+                <p class="card-text"><%= listing.description || "No description available" %></p>
+                <p class="card-text">&#8377 <%= listing.price !=null ? listing.price.toLocaleString("en-IN") : "N/A" %></p>
+                <p class="card-text"><%= listing.location || "Location not specified" %></p>
+                <p class="card-text"><%= listing.country || "Country not specified" %></p>
+            </div>
         </div>
-        <div class="btns">
-            <% if (listing._id) { %>
-                <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
-                <br>
-                <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-                    <button class="btn btn-dark offset-5">Delete</button>
-                </form>
+            <div class="btns">
+                <% if (listing._id) { %>
+                    <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-3 edit-btn">Edit</a>
+                    <br>
+                    <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                        <button class="btn btn-dark offset-5">Delete</button>
+                    </form>
                 <% } %>
-        </div>
+            </div>
 
         <div class="col-8 offset-3 mb-3">
             <hr />
