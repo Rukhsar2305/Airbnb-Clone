@@ -13,6 +13,17 @@ const listingSchema = new Schema({
         default:
             "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60",
     },
+    // image: {
+    //     url: {
+    //         type: String,
+    //         default:
+    //             "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=60",
+    //         },
+    //     filename: {
+    //         type: String,
+    //         default: "listingimage",
+    //     }
+    // },
     price: Number,
     location: String,
     country: String,
