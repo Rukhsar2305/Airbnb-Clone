@@ -99,6 +99,6 @@ Special thanks to **Shradha Khapra**, ma’am 🙏, for her guidance and support
 
 Rukhsar Bano
 
-LinkedIn: 
+LinkedIn: www.linkedin.com/in/rukhsarbano23
 
-GitHub:
+GitHub: https://github.com/Rukhsar2305
