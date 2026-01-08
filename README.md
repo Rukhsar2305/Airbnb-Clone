@@ -56,22 +56,23 @@ npm install
 ### 4. Set up environment variables
 Create a .env file in the root directory and add the following:
 
-PORT=3000
+- PORT=3000
 
-MONGO_URI=your_mongodb_connection_string
+- MONGO_URI=your_mongodb_connection_string
 
-CLOUDINARY_CLOUD_NAME=your_cloud_name
+- CLOUDINARY_CLOUD_NAME=your_cloud_name
 
-CLOUDINARY_API_KEY=your_api_key
+- CLOUDINARY_API_KEY=your_api_key
 
-CLOUDINARY_API_SECRET=your_api_secret
+- CLOUDINARY_API_SECRET=your_api_secret
 
-SESSION_SECRET=your_session_secret
+- SESSION_SECRET=your_session_secret
 
 ### 5. Start the server
 npm start
 
 ### 6. Open in browser
+http://localhost:3000
 
 ---
 
