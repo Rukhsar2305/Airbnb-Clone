@@ -92,6 +92,7 @@ npm start
 **Acknowledgements**
 
 Sigma 8.0 Full-Stack Web Development Course, @Apna College
+
 Special thanks to **Shradha Khapra**, ma’am 🙏, for her guidance and support
 
 ---
